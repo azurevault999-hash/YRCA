@@ -2,7 +2,7 @@
 
 ## Current checkpoint
 
-`000 — repository foundation`
+`000 — Repository foundation`
 
 ## Status
 
