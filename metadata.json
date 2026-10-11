@@ -1,0 +1,6 @@
+{
+  "name": "Yoddha Rakshak — YRCCC Digital Companion",
+  "description": "Institutional military learning companion and PWA for the Yoddha Rakshak Combat Casualty Care Course, featuring MARCH tactical modules, skills evaluation, assessments, and verified certification.",
+  "permissions": [],
+  "capabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
