@@ -6,7 +6,7 @@
 
 ## Status
 
-The GCP development VM is running the official Moodle `moodle-docker` development stack. Moodle 5.2.4 is serving its login page and an administrator login has been confirmed by the project owner. The CLI upgrade check reports no pending upgrade. The full capability-validation course and database-table verification are still outstanding.
+The GCP development VM is running the official Moodle `moodle-docker` development stack. Moodle 5.2.4 is serving its login page and an administrator login has been confirmed by the project owner. The CLI upgrade check reports no pending upgrade. Database inspection found 490 tables using Moodle's configured `m_` prefix. The full capability-validation course and role/feature tests are still outstanding.
 
 ## Last verified repository commit
 
@@ -31,6 +31,7 @@ The repository foundation is committed on `main`. The running Moodle environment
 - YRCA repository: `~/YRCA`, branch `main`
 - Moodle source: `~/moodle`, branch `MOODLE_502_STABLE`
 - Official Moodle development tooling: `~/moodle-docker`
+- `moodle-docker` Git revision: `f4c2324d32fb74d7753264381f0a9b418b6034b2` (working tree clean)
 - Moodle version reported by CLI: 5.2.4 (Build: 20261005)
 - Containers observed running: webserver, PostgreSQL 17, Selenium, Mailpit and Moodle extension tests
 - Moodle webserver is bound to VM loopback at port 8000; access from the workstation is through Taby's local SSH port forwarding. Do not expose port 8000 publicly.
@@ -42,8 +43,7 @@ No secrets, admin passwords, runtime database contents, or Moodle data directory
 
 Finish `001 — Moodle capability validation`:
 
-1. Verify Moodle database tables/schema and persistence.
-2. Record the exact `moodle-docker` Git revision and container configuration.
+1. Verify remaining schema/persistence behaviour and record the container configuration.
 3. Create a miniature YRCCC course exercising:
    - PDF/manual resource;
    - video;
