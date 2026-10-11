@@ -16,7 +16,7 @@ Run a real Moodle instance from the start so YRCCC work is validated against Moo
 
 - `~/YRCA` — this product repository
 - `~/moodle` — Moodle source checkout on `MOODLE_502_STABLE`
-- `~/moodle-docker` — official `moodlehq/moodle-docker` development tooling
+- `~/moodle-docker` — official `moodlehq/moodle-docker` development tooling; Git revision `f4c2324d32fb74d7753264381f0a9b418b6034b2` (working tree clean)
 
 The Moodle source and `moodle-docker` tooling are separate checkouts; do not copy the entire Moodle source or runtime data into YRCA.
 
@@ -25,7 +25,7 @@ The Moodle source and `moodle-docker` tooling are separate checkouts; do not cop
 - Moodle CLI reports version 5.2.4 (Build: 20261005), with no pending upgrade.
 - Containers observed running: `moodle-docker-webserver-1`, `moodle-docker-db-1` (PostgreSQL 17), `moodle-docker-selenium-1`, `moodle-docker-mailpit-1`, and `moodle-docker-exttests-1`.
 - The Moodle webserver responds on the VM at `http://127.0.0.1:8000`; the browser reached the Moodle login page and administrator login was confirmed.
-- Database table/schema verification remains a required follow-up. Do not mark the capability checkpoint complete until this is verified.
+- Database inspection returned 490 tables matching the configured `m_` prefix. The earlier zero count queried the incorrect `mdl_` prefix. Further persistence and capability checks remain.
 
 ## Restore shell environment after SSH reconnect
 
